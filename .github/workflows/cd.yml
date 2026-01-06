@@ -25,8 +25,8 @@ jobs:
     - name: Build and push Docker image
       run: |
         cd ipPhone_Project
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/phonebook-backend:latest .
-        docker push ${{ secrets.DOCKER_USERNAME }}/phonebook-backend:latest
+        docker build -t ${{ secrets.BACKEND_USERNAME }}/phonebook-backend:latest .
+        docker push ${{ secrets.BACKEND_USERNAME }}/phonebook-backend:latest
     
     # Step 4: Success
     - name: Deployment complete
