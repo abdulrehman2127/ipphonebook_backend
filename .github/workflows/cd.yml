@@ -1,0 +1,33 @@
+name: Backend CD (Deploy)
+
+# Run only on main branch after code is merged
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Step 1: Get the code
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    # Step 2: Login to Docker Hub
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.BACKEND_USERNAME }}
+        password: ${{ secrets.BACKEND_PASSWORD }}
+    
+    # Step 3: Build and push Docker image
+    - name: Build and push Docker image
+      run: |
+        cd ipPhone_Project
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/phonebook-backend:latest .
+        docker push ${{ secrets.DOCKER_USERNAME }}/phonebook-backend:latest
+    
+    # Step 4: Success
+    - name: Deployment complete
+      run: echo "✅ Backend deployed to Docker Hub!"

@@ -1,0 +1,53 @@
+name: Backend CI/CD
+
+# When to run this workflow
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  issues:
+    types: [opened, edited, reopened]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Step 1: Get the code
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    # Step 2: Setup Python
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: |
+        cd ipPhone_Project
+        pip install -r requirements.txt
+    
+    # Step 4: Run migrations
+    - name: Run migrations
+      run: |
+        cd ipPhone_Project
+        python manage.py migrate
+    
+    # Step 5: Run tests
+    - name: Run tests
+      run: |
+        cd ipPhone_Project
+        python manage.py test
+    
+    # Step 6: Build Docker image
+    - name: Build Docker image
+      run: |
+        cd ipPhone_Project
+        docker build -t phonebook-backend:latest .
+    
+    # Step 7: Success
+    - name: Success
+      run: echo "✅ Backend CI/CD completed!"
