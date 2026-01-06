@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<YealinkIPPhoneDirectory>
+  <DirectoryEntry>
+    <Name>NOC Hotline</Name>
+    <Telephone>1001</Telephone>
+    <Department>Help</Department>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Reception</Name>
+    <Telephone>1000</Telephone>
+    <Department>HR</Department>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Jawad Abbasi</Name>
+    <Telephone>1011</Telephone>
+    <Department>Networking</Department>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Sales Desk</Name>
+    <Telephone>1200</Telephone>
+    <Department>Sales</Department>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Support L1</Name>
+    <Telephone>1300</Telephone>
+    <Department>Support</Department>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Abid</Name>
+    <Telephone>55000</Telephone>
+    <Department>Devops</Department>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Abdul Rehman</Name>
+    <Telephone>3046716109</Telephone>
+    <Department>Devops</Department>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Inara Technologies</Name>
+    <Telephone>(051)2700264</Telephone>
+    <Department>IT-Comapany</Department>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Jawad</Name>
+    <Telephone>0123</Telephone>
+    <Department>Network</Department>
+  </DirectoryEntry>
+</YealinkIPPhoneDirectory>
